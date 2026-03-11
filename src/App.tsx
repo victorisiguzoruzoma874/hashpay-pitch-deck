@@ -3,7 +3,7 @@ import Hero from './sections/Hero';
 import Problem from './sections/Problem';
 import Solution from './sections/Solution';
 import Features from './sections/Features';
-import Team from './sections/Team';
+import TeamShowcase from './components/ui/team-showcase';
 import Technology from './sections/Technology';
 import Market from './sections/Market';
 import Vision from './sections/Vision';
@@ -78,8 +78,12 @@ const App: React.FC = () => {
             <Features />
           </section>
 
-          <section id="team">
-            <Team />
+          <section id="team" className="py-24">
+            <div className="text-center mb-16">
+              <h2 className="text-4xl md:text-5xl font-bold mb-4">The Minds Behind HashPay</h2>
+              <div className="h-1 w-24 bg-cyan-400 mx-auto" />
+            </div>
+            <TeamShowcase />
           </section>
 
           <section id="tech">

@@ -57,18 +57,19 @@ const Team: React.FC = () => {
               viewport={{ once: true }}
               transition={{ delay: idx * 0.1 }}
               whileHover={{ y: -10 }}
-              className="group glass-card p-6 border-transparent hover:border-cyan-400/30 transition-all duration-500"
+              className="group glass-card p-6 border-transparent hover:border-cyan-400/30 transition-all duration-500 shadow-xl"
             >
-              <div className="relative mb-6 overflow-hidden rounded-2xl aspect-square">
+              <div className="relative mb-6 overflow-hidden rounded-2xl aspect-square border border-white/10 group-hover:border-cyan-400/50 transition-colors duration-500 shadow-inner">
                 <img 
                   src={member.image} 
                   alt={member.name}
-                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 brightness-110 saturate-110"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-40 group-hover:opacity-100 transition-opacity duration-500" />
+                <div className="absolute inset-0 ring-1 ring-inset ring-white/10 group-hover:ring-cyan-400/30 transition-all duration-500 rounded-2xl" />
               </div>
-              <h3 className="text-xl font-bold text-white mb-1">{member.name}</h3>
-              <p className="text-cyan-400 text-sm font-medium">{member.role}</p>
+              <h3 className="text-xl font-bold text-white mb-1 group-hover:text-cyan-400 transition-colors">{member.name}</h3>
+              <p className="text-cyan-400/70 text-sm font-medium tracking-wide uppercase">{member.role}</p>
             </motion.div>
           ))}
         </div>
