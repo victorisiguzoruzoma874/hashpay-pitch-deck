@@ -76,7 +76,15 @@ const Solution: React.FC<any> = () => {
                     ease: "easeOut",
                     delay: ball.delay + 0.3
                   }}
-                  whileHover={{ scale: 1.15, zIndex: 100 }}
+                  whileHover={{ 
+                    scale: 1.15, 
+                    zIndex: 100,
+                    y: [-ball.targetY, -ball.targetY - 25, -ball.targetY],
+                    transition: { 
+                      y: { repeat: Infinity, duration: 0.6, ease: "easeInOut" },
+                      scale: { duration: 0.2 }
+                    }
+                  }}
                   className="absolute cursor-pointer flex items-center justify-center"
                   style={{ 
                     width: ball.size, 
@@ -106,7 +114,7 @@ const Solution: React.FC<any> = () => {
           </div>
 
           <div className="absolute -top-6 -right-6 bg-white border-2 border-[#0052FF] text-[#0052FF] px-6 py-3 font-mono text-xs font-black shadow-2xl z-50 transform rotate-6">
-            CORE_RELIABLE_v6.3
+            CORE_RELIABLE_v6.4
           </div>
         </div>
       </div>
