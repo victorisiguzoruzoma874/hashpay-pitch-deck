@@ -1,40 +1,35 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 
-const CTA: React.FC<any> = () => {
+const CTA: React.FC<any> = ({ onPrev }) => {
   return (
-    <div className="flex flex-col items-center justify-center h-full px-8 text-center">
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        className="max-w-3xl"
-      >
-        <span className="text-cyan-400 font-mono text-sm tracking-widest uppercase mb-4 block font-bold">THE FUTURE IS HERE</span>
-        <h2 className="text-5xl md:text-7xl font-bold mb-8 tracking-tighter">
-          Invest in the <br />
-          <span className="text-gradient">Universal Payment Layer.</span>
-        </h2>
+    <section id="cta" className="py-40 px-6 bg-white overflow-hidden relative">
+      {/* Background Graphic */}
+      <div className="absolute top-0 right-0 w-1/2 h-full bg-[#0052FF]/5 skew-x-12 translate-x-1/4" />
+      
+      <div className="max-w-6xl mx-auto relative z-10">
+        <h2 className="text-6xl md:text-9xl font-bold mb-12 text-[#0a0a0a] tracking-tighter leading-none">Execute <br/><span className="text-[#0052FF]">Now.</span></h2>
         
-        <p className="text-xl text-white/50 mb-12 max-w-xl mx-auto">
-          Join us in redefining global finance. HashPay is currently in private beta and seeking strategic partners.
-        </p>
-
-        <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-          <button className="px-10 py-4 bg-cyan-500 text-black font-bold rounded-full hover:bg-cyan-400 hover:shadow-[0_0_30px_rgba(6,182,212,0.5)] transition-all duration-300">
-            Request Access
-          </button>
-          <button className="px-10 py-4 glass-card border-white/20 text-white font-bold rounded-full hover:bg-white/5 transition-all duration-300">
-            Watch Demo
-          </button>
+        <div className="flex flex-col md:flex-row gap-8 items-start">
+          <motion.button 
+            whileHover={{ x: 10 }}
+            className="group flex items-center gap-6 px-12 py-6 bg-[#0052FF] text-white rounded-full font-bold text-2xl shadow-2xl shadow-[#0052FF]/30"
+          >
+            Become a Partner
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" className="group-hover:translate-x-2 transition-transform">
+              <path d="M5 12h14m0 0l-7-7m7 7l-7 7" strokeLinecap="round" strokeLinejoin="round" />
+            </svg>
+          </motion.button>
+          
+          <div className="max-w-sm">
+            <p className="text-[#555555] text-lg font-medium leading-relaxed">
+              HashPay is actively seeking strategic partnerships for the 2026 SUI Mainnet rollout. 
+              Secure your place in the future of parallel commerce.
+            </p>
+          </div>
         </div>
-
-        <div className="mt-20 flex justify-center gap-12 grayscale opacity-40 hover:grayscale-0 hover:opacity-100 transition-all duration-700">
-           <div className="text-xl font-black uppercase tracking-tighter">SUI Foundation</div>
-           <div className="text-xl font-black uppercase tracking-tighter">Gemini AI</div>
-           <div className="text-xl font-black uppercase tracking-tighter">Mysten Labs</div>
-        </div>
-      </motion.div>
-    </div>
+      </div>
+    </section>
   );
 };
 

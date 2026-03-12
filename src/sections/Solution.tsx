@@ -1,62 +1,116 @@
-import React from 'react';
+import React, { useMemo } from 'react';
 import { motion } from 'framer-motion';
 
 const Solution: React.FC<any> = () => {
-  return (
-    <div className="flex flex-col items-center justify-center h-full px-8">
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center max-w-6xl">
-        <motion.div
-          initial={{ opacity: 0, x: -50 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.8 }}
-        >
-          <span className="inline-block px-4 py-1 rounded-full bg-cyan-400/10 text-cyan-400 text-sm font-bold mb-6">THE SOLUTION</span>
-          <h2 className="text-5xl md:text-6xl font-bold mb-8 leading-tight">
-            Seamless, Instant,<br />
-            <span className="text-gradient">Verifiable Payments.</span>
-          </h2>
-          <p className="text-xl text-white/60 mb-8 leading-relaxed">
-            HashPay leverages SUI's unique Object-centric model and Programmable Transaction Blocks (PTB) to deliver high-throughput, low-latency financial infrastructure for everyone.
-          </p>
-          <ul className="space-y-4">
-            {['Direct P2P Settlements', 'Programmable Smart Escrow', 'AI-Driven Security'].map((item, i) => (
-              <li key={i} className="flex items-center gap-3">
-                <div className="w-6 h-6 rounded-full bg-cyan-400/20 flex items-center justify-center">
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" className="text-cyan-400">
-                    <path d="M5 13l4 4L19 7" strokeWidth={3} strokeLinecap="round" strokeLinejoin="round" />
-                  </svg>
-                </div>
-                <span className="text-lg font-medium">{item}</span>
-              </li>
-            ))}
-          </ul>
-        </motion.div>
+  // Use useMemo to ensure random bounce values don't change on every render
+  const letters = useMemo(() => [
+    // Top row: "Hash"
+    { char: 'H', bg: '#ffffff', text: '#0052FF', size: 90, targetX: -135, targetY: 50, delay: 0.1 },
+    { char: 'a', bg: '#111111', text: '#ffffff', size: 90, targetX: -45, targetY: 50, delay: 0.3 },
+    { char: 's', bg: '#ffffff', text: '#0052FF', size: 90, targetX: 45, targetY: 50, delay: 0.2 },
+    { char: 'h', bg: '#111111', text: '#ffffff', size: 90, targetX: 135, targetY: 50, delay: 0.4 },
+    // Bottom row: "Pay"
+    { char: 'P', bg: '#ffffff', text: '#0052FF', size: 90, targetX: -90, targetY: -40, delay: 0.5 },
+    { char: 'a', bg: '#111111', text: '#ffffff', size: 90, targetX: 0, targetY: -40, delay: 0.6 },
+    { char: 'y', bg: '#ffffff', text: '#0052FF', size: 90, targetX: 90, targetY: -40, delay: 0.7 },
+  ].map(letter => ({
+    ...letter,
+    // Pre-calculate random bounce intermediate points with wide horizontal movement
+    bounceX: [
+      Math.random() * 600 - 300, // Move far left/right
+      Math.random() * 400 - 200, 
+      Math.random() * 200 - 100, 
+      letter.targetX
+    ],
+    bounceY: [
+      -600, 
+      Math.random() * -300 - 100, 
+      Math.random() * 150, 
+      -letter.targetY
+    ]
+  })), []);
 
-        <motion.div
-          initial={{ opacity: 0, scale: 0.8, rotate: -5 }}
-          animate={{ opacity: 1, scale: 1, rotate: 0 }}
-          transition={{ duration: 1, delay: 0.2 }}
-          className="relative"
-        >
-          <div className="glass-card p-4 aspect-[4/3] flex items-center justify-center overflow-hidden">
-             <div className="w-full h-full bg-gradient-to-br from-cyan-900/20 to-purple-900/20 rounded-xl relative overflow-hidden group">
-                <div className="absolute inset-0 flex items-center justify-center">
-                   <div className="w-3/4 h-3/4 border-2 border-cyan-400/30 rounded-full animate-pulse" />
-                </div>
-                <div className="absolute inset-0 flex items-center justify-center">
-                   <div className="w-1/2 h-1/2 border-2 border-purple-400/30 rounded-full animate-ping" />
-                </div>
-                <div className="text-center relative z-10">
-                   <div className="text-4xl font-bold mb-2">PTB</div>
-                   <div className="text-sm text-cyan-400/70">SUI NETWORK POWERED</div>
-                </div>
-             </div>
+  return (
+    <section id="solution" className="py-32 px-6 bg-[#f3f3f3]">
+      <div className="max-w-6xl mx-auto flex flex-col lg:flex-row items-center gap-16">
+        <div className="flex-1 text-left">
+          <span className="text-[#0052FF] font-bold text-sm tracking-widest uppercase mb-4 block">The Infrastructure</span>
+          <h2 className="text-5xl md:text-7xl font-bold mb-8 text-[#0a0a0a] tracking-tight leading-[0.9]">Programmable <br/>Abstraction Layer.</h2>
+          <p className="text-xl text-[#555555] mb-10 leading-relaxed font-medium">
+            HashPay is the missing link between high-performance chain state and real-world utility. 
+            We provide a frictionless SDK for voice-activated, parallelized commerce.
+          </p>
+          
+          <div className="space-y-6">
+            <div className="flex items-start gap-4 p-4 rounded-2xl bg-white border border-[#0052FF]/10 shadow-sm">
+              <div className="w-10 h-10 bg-[#0052FF]/10 rounded-xl flex items-center justify-center shrink-0">
+                <div className="w-2 h-2 bg-[#0052FF] rounded-full animate-ping" />
+              </div>
+              <div>
+                <h4 className="font-bold text-[#0a0a0a]">Parallelized Settlement</h4>
+                <p className="text-sm text-[#555555]">Utilizing SUI's parallel execution for zero-latency commerce.</p>
+              </div>
+            </div>
           </div>
-          <div className="absolute -top-4 -right-4 w-24 h-24 bg-cyan-400 blur-3xl opacity-20" />
-          <div className="absolute -bottom-4 -left-4 w-32 h-32 bg-purple-600 blur-3xl opacity-20" />
-        </motion.div>
+        </div>
+
+        <div className="flex-1 relative w-full flex items-center justify-center">
+          <div className="relative w-full max-w-[500px] aspect-square bg-[#0052FF] rounded-[4rem] shadow-2xl shadow-[#0052FF]/40 overflow-hidden flex items-center justify-center">
+            
+            <div className="absolute inset-0 bg-gradient-to-br from-white/10 to-transparent pointer-events-none z-0" />
+            
+            <div className="relative w-full h-full z-10">
+              {letters.map((ball, i) => (
+                <motion.div
+                  key={i}
+                  initial={{ opacity: 0, scale: 0 }}
+                  animate={{ 
+                    x: ball.bounceX, 
+                    y: ball.bounceY,
+                    opacity: 1,
+                    scale: 1
+                  }}
+                  transition={{ 
+                    duration: 3.5, 
+                    times: [0, 0.3, 0.7, 1],
+                    ease: "easeOut",
+                    delay: ball.delay + 0.3
+                  }}
+                  whileHover={{ scale: 1.15, zIndex: 100 }}
+                  className="absolute cursor-pointer flex items-center justify-center"
+                  style={{ 
+                    width: ball.size, 
+                    height: ball.size,
+                    backgroundColor: ball.bg,
+                    borderRadius: '50%',
+                    left: '50%',
+                    top: '50%',
+                    transform: 'translate(-50%, -50%)',
+                    fontFamily: '"Arial Black", Arial, sans-serif',
+                    fontWeight: 900,
+                    color: ball.text,
+                    fontSize: ball.size * 0.45,
+                    boxShadow: 'inset -5px -5px 15px rgba(0,0,0,0.4), inset 5px 5px 15px rgba(255,255,255,0.4), 0 10px 20px rgba(0,0,0,0.3)',
+                    marginLeft: -ball.size / 2,
+                    marginTop: -ball.size / 2,
+                    zIndex: 20 + i
+                  }}
+                >
+                  <span className="relative z-10 leading-none">{ball.char}</span>
+                  <div className="absolute inset-0 rounded-full bg-[radial-gradient(circle_at_35%_35%,_rgba(255,255,255,0.4),_transparent)] pointer-events-none" />
+                </motion.div>
+              ))}
+            </div>
+
+            <div className="absolute inset-0 border-[16px] border-white/5 rounded-[4rem] pointer-events-none z-40" />
+          </div>
+
+          <div className="absolute -top-6 -right-6 bg-white border-2 border-[#0052FF] text-[#0052FF] px-6 py-3 font-mono text-xs font-black shadow-2xl z-50 transform rotate-6">
+            CORE_RELIABLE_v6.3
+          </div>
+        </div>
       </div>
-    </div>
+    </section>
   );
 };
 

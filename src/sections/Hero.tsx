@@ -8,57 +8,48 @@ interface SlideProps {
   isLast: boolean;
 }
 
-const Hero: React.FC<SlideProps> = () => {
+const Hero: React.FC<SlideProps> = ({ onNext, onPrev, isFirst, isLast }) => {
   const scrollToSummary = () => {
     document.getElementById('summary')?.scrollIntoView({ behavior: 'smooth' });
   };
   return (
-    <div className="flex flex-col items-center justify-center h-full px-8 text-center">
-      <motion.div
-        initial={{ opacity: 0, scale: 0.8 }}
-        animate={{ opacity: 1, scale: 1 }}
-        transition={{ duration: 0.8, ease: "easeOut" }}
-        className="mb-8"
+    <section id="hero" className="min-h-screen flex flex-col items-center justify-center px-6 relative overflow-hidden">
+      <motion.div 
+        initial={{ opacity: 0, y: 30 }}
+        animate={{ opacity: 1, y: 0 }}
+        className="text-center z-10 max-w-4xl"
       >
-        <div className="w-32 h-32 bg-gradient-to-br from-cyan-400 to-purple-600 rounded-3xl flex items-center justify-center shadow-[0_0_50px_rgba(6,182,212,0.3)] transform rotate-12">
-          <span className="text-4xl font-bold text-white -rotate-12">H</span>
+        <span className="inline-block px-4 py-1.5 rounded-full bg-[#0052FF]/10 text-[#0052FF] text-xs font-bold uppercase tracking-[0.2em] mb-8 border border-[#0052FF]/20">
+          The Future of Web3 Payments
+        </span>
+        <h1 className="text-6xl md:text-8xl font-bold mb-8 tracking-tighter text-[#0a0a0a]">
+          Hash<span className="text-[#0052FF]">Pay</span>
+        </h1>
+        <p className="text-xl md:text-2xl text-[#555555] mb-12 max-w-2xl mx-auto leading-relaxed">
+          The AI-powered financial layer for the SUI ecosystem. 
+          Bridging abstraction with instant, programmable liquidity.
+        </p>
+        
+        <div className="flex flex-col md:flex-row gap-6 justify-center items-center">
+          <motion.button 
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+            onClick={onNext}
+            className="px-10 py-4 bg-[#0052FF] text-white rounded-full font-bold text-lg shadow-xl shadow-[#0052FF]/30 transition-shadow hover:shadow-[#0052FF]/50"
+          >
+            Explore Vision
+          </motion.button>
+          <button className="text-[#0a0a0a] font-bold text-lg border-b-2 border-transparent hover:border-[#0052FF] transition-all py-2">
+            Read Whitepaper
+          </button>
         </div>
       </motion.div>
 
-      <motion.h1
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 0.2, duration: 0.6 }}
-        className="text-6xl md:text-8xl font-bold mb-6 tracking-tight"
-      >
-        Hash<span className="text-cyan-400">Pay</span>
-      </motion.h1>
-
-      <motion.p
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 0.4, duration: 0.6 }}
-        className="text-xl md:text-2xl text-white/60 mb-12 max-w-2xl font-light"
-      >
-        The Next Generation of Global Payments on SUI.
-        Fast. Secure. AI-Powered.
-      </motion.p>
-
-      <motion.button
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 0.8 }}
-        onClick={scrollToSummary}
-        className="group relative px-8 py-4 bg-white text-black font-semibold rounded-full hover:scale-105 transition-transform overflow-hidden"
-      >
-        <span className="relative z-10 flex items-center gap-2">
-          Explore the Pitch
-          <svg width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor" className="group-hover:translate-y-1 transition-transform">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
-          </svg>
-        </span>
-      </motion.button>
-    </div>
+      {/* Subtle ASCII-like Texture element */}
+      <div className="absolute inset-0 opacity-[0.03] pointer-events-none select-none font-mono text-[10px] overflow-hidden leading-tight whitespace-pre">
+        {Array(50).fill("H A S H P A Y * $ * S U I * N E T W O R K * A I * V O I C E * A S S I S T A N T * S M A R T * E S C R O W * ").join("\n")}
+      </div>
+    </section>
   );
 };
 

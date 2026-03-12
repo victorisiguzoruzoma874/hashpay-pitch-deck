@@ -3,34 +3,39 @@ import { motion } from 'framer-motion';
 
 const Problem: React.FC<any> = () => {
   const painPoints = [
-    { title: "Slow Settlements", desc: "Traditional cross-border payments take 3-5 days." },
-    { title: "High Fees", desc: "Intermediaries eat up to 7% of transaction value." },
-    { title: "Complexity", desc: "Escrow and complex logic require expensive legal work." },
-    { title: "Limited Access", desc: "Billions are still unbanked or underbanked." }
+    { title: "Fragmented UX", desc: "Web3 wallets are too complex for mass retail adoption." },
+    { title: "Liquidity Gaps", desc: "Cross-border settlements take days, not seconds." },
+    { title: "Escrow Risks", desc: "Lack of programmable trust in P2P transactions." }
   ];
 
   return (
-    <div className="flex flex-col items-center justify-center h-full px-8">
-      <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="text-center mb-16">
-        <h2 className="text-4xl md:text-5xl font-bold mb-4">The Global Payment Crisis</h2>
-        <div className="h-1 w-24 bg-cyan-400 mx-auto" />
-      </motion.div>
+    <section id="problem" className="py-32 px-6 bg-white border-y border-[#0052FF]/5">
+      <div className="max-w-6xl mx-auto">
+        <div className="text-center mb-20">
+          <h2 className="text-4xl md:text-6xl font-bold mb-6 text-[#0a0a0a] tracking-tight">The Liquidity Paradox</h2>
+          <p className="text-[#555555] max-w-2xl mx-auto text-lg leading-relaxed">
+            Global finance is digital, yet cross-border friction costs $120B annually. 
+            The barrier isn't the ledger—it's the abstraction.
+          </p>
+        </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl w-full">
-        {painPoints.map((point, idx) => (
-          <motion.div
-            key={idx}
-            initial={{ opacity: 0, x: idx % 2 === 0 ? -20 : 20 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ delay: idx * 0.1 + 0.3 }}
-            className="p-8 rounded-3xl border border-white/5 bg-white/5 backdrop-blur-sm"
-          >
-            <h3 className="text-xl font-bold text-cyan-400 mb-2">{point.title}</h3>
-            <p className="text-white/60">{point.desc}</p>
-          </motion.div>
-        ))}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
+          {painPoints.map((item, idx) => (
+            <motion.div 
+              key={idx}
+              whileHover={{ y: -10 }}
+              className="p-10 rounded-3xl bg-[#f3f3f3] border border-[#0052FF]/5 hover:border-[#0052FF]/20 transition-all shadow-sm"
+            >
+              <div className="w-16 h-16 bg-[#0052FF] rounded-2xl mb-8 flex items-center justify-center text-white text-3xl font-bold shadow-lg shadow-[#0052FF]/20">
+                0{idx + 1}
+              </div>
+              <h3 className="text-2xl font-bold mb-4 text-[#0a0a0a] tracking-snug">{item.title}</h3>
+              <p className="text-[#555555] leading-relaxed italic">"{item.desc}"</p>
+            </motion.div>
+          ))}
+        </div>
       </div>
-    </div>
+    </section>
   );
 };
 

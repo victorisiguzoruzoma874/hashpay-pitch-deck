@@ -3,7 +3,7 @@ import Hero from './sections/Hero';
 import Problem from './sections/Problem';
 import Solution from './sections/Solution';
 import Features from './sections/Features';
-import TeamShowcase from './components/ui/team-showcase';
+import Team from './sections/Team';
 import Technology from './sections/Technology';
 import Market from './sections/Market';
 import Vision from './sections/Vision';
@@ -14,55 +14,74 @@ import { useState } from 'react';
 const App: React.FC = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   return (
-    <div className="relative min-h-screen w-screen overflow-x-hidden bg-[#050505] selection:bg-cyan-500/30">
-      {/* Dynamic Background */}
-      <div className="fixed inset-0 z-0 pointer-events-none">
-        <div className="absolute top-[-10%] left-[-10%] w-[60%] h-[60%] bg-cyan-500/10 blur-[150px] rounded-full" />
-        <div className="absolute bottom-[-10%] right-[-10%] w-[60%] h-[60%] bg-purple-600/10 blur-[150px] rounded-full" />
-      </div>
+    <div className="relative min-h-screen bg-[#f3f3f3] text-[#0a0a0a] selection:bg-[#0052FF] selection:text-white">
+      {/* Level Breathing Vignette */}
+      <div className="level-vignette" />
 
-      {/* Persistent Navigation / Write-up Trigger */}
-      <nav className="fixed top-0 left-0 w-full z-50 p-6 flex justify-between items-center backdrop-blur-md bg-black/20 border-b border-white/5">
-        <div className="flex items-center gap-3">
-          <div className="w-10 h-10 bg-gradient-to-br from-cyan-400 to-purple-600 rounded-xl flex items-center justify-center font-bold">H</div>
-          <span className="text-xl font-bold tracking-tight">Hash<span className="text-cyan-400">Pay</span></span>
+      {/* Persistent Summary Modal Section */}
+      <SummaryModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
+
+      {/* Sticky Header / Navigation */}
+      <nav className="fixed top-0 left-0 right-0 z-50 px-6 py-4 flex justify-between items-center backdrop-blur-md bg-white/70 border-b border-[#0052FF]/10">
+        <div className="flex items-center gap-2">
+          <div className="w-8 h-8 bg-[#0052FF] rounded-lg flex items-center justify-center font-bold text-white tracking-tighter shadow-lg shadow-[#0052FF]/20">H</div>
+          <span className="text-xl font-bold tracking-tight text-[#0a0a0a]">Hash<span className="text-[#0052FF]">Pay</span></span>
         </div>
-        <div className="hidden md:flex gap-8 text-sm font-medium text-white/60">
-          <a href="#problem" className="hover:text-cyan-400 transition-colors">Problem</a>
-          <a href="#solution" className="hover:text-cyan-400 transition-colors">Solution</a>
-          <a href="#features" className="hover:text-cyan-400 transition-colors">Ecosystem</a>
-          <a href="#team" className="hover:text-cyan-400 transition-colors">Team</a>
-          <a href="#tech" className="hover:text-cyan-400 transition-colors">Technology</a>
+        
+        <div className="hidden md:flex items-center gap-8 text-sm font-semibold text-[#0a0a0a]/70">
+          <a href="#hero" className="hover:text-[#0052FF] transition-colors uppercase tracking-wider">Start</a>
+          <a href="#problem" className="hover:text-[#0052FF] transition-colors uppercase tracking-wider">Problem</a>
+          <a href="#solution" className="hover:text-[#0052FF] transition-colors uppercase tracking-wider">Solution</a>
+          <a href="#features" className="hover:text-[#0052FF] transition-colors uppercase tracking-wider">Ecosystem</a>
+          <a href="#team" className="hover:text-[#0052FF] transition-colors uppercase tracking-wider">Team</a>
+          <a href="#tech" className="hover:text-[#0052FF] transition-colors uppercase tracking-wider">Tech</a>
         </div>
         <button 
           onClick={() => setIsModalOpen(true)}
-          className="px-6 py-2 bg-white text-black text-sm font-bold rounded-full hover:scale-105 transition-transform"
+          className="px-6 py-2 bg-[#0052FF] text-white text-sm font-bold rounded-full hover:scale-105 transition-transform shadow-lg shadow-[#0052FF]/20"
         >
           Pitch Summary
         </button>
       </nav>
 
-      <SummaryModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
-
       {/* Main Content Sections */}
-      <main className="relative z-10">
-        <section id="hero" className="min-h-screen flex items-center justify-center">
+      <main className="relative z-10 pt-20">
+        <section id="hero">
           <Hero onNext={() => {}} onPrev={() => {}} isFirst={true} isLast={false} />
         </section>
         
-        <div className="max-w-7xl mx-auto px-6 space-y-32 py-32">
+        <div className="max-w-7xl mx-auto px-6 space-y-32">
           {/* Executive Summary / Write-up Section */}
-          <section id="summary" className="glass-card p-12 relative overflow-hidden group">
-            <div className="absolute top-0 right-0 p-8 opacity-10 font-black text-6xl">SYNOPSIS</div>
+          <section id="summary" className="p-12 rounded-[3rem] bg-white border border-[#0052FF]/10 relative overflow-hidden group shadow-xl shadow-[#0052FF]/5">
+            <div className="absolute top-0 right-0 p-8 opacity-[0.03] font-black text-9xl text-[#0052FF] pointer-events-none select-none">SYNOPSIS</div>
             <div className="max-w-3xl relative z-10">
-              <span className="text-cyan-400 uppercase tracking-widest text-xs font-bold mb-4 block">Executive Briefing</span>
-              <h2 className="text-4xl font-bold mb-8">Redefining the Velocity of Global Value.</h2>
-              <p className="text-lg text-white/50 leading-relaxed mb-6">
+              <span className="text-[#0052FF] uppercase tracking-[0.3em] text-xs font-bold mb-6 block">Executive Briefing</span>
+              <h2 className="text-5xl font-bold mb-8 text-[#0a0a0a] tracking-tight leading-tight">Redefining the Velocity of Global Value.</h2>
+              <p className="text-xl text-[#555555] leading-relaxed mb-8">
                 HashPay is not just a wallet; it's a <strong>universal financial abstraction layer</strong>. By combining SUI's parallel execution with Gemini's semantic intelligence, we solve the two biggest hurdles in DeFi: <strong>technical friction</strong> and <strong>latency</strong>.
               </p>
-              <p className="text-lg text-white/50 leading-relaxed">
+              <p className="text-xl text-[#555555] leading-relaxed">
                 Our vision is a world where sending money is as natural as conversation. From instant cross-border settlements to smart escrow services that eliminate legal overhead, HashPay provides the infrastructure for the next billion users to interact with the decentralized economy seamlessly.
               </p>
+              
+              <div className="mt-10 flex flex-wrap gap-4">
+                <button 
+                  onClick={() => setIsModalOpen(true)}
+                  className="px-8 py-4 bg-[#0052FF] text-white font-bold rounded-2xl hover:scale-105 transition-transform shadow-xl shadow-[#0052FF]/20"
+                >
+                  View Digital Summary
+                </button>
+                <a 
+                  href="/HashPay_Investor_Deck.pptx" 
+                  download
+                  className="px-8 py-4 bg-[#0a0a0a] text-white font-bold rounded-2xl hover:bg-[#0052FF] transition-colors flex items-center gap-3 shadow-xl"
+                >
+                  <svg width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+                  </svg>
+                  Download Investor Deck (.pptx)
+                </a>
+              </div>
             </div>
           </section>
 
@@ -78,12 +97,8 @@ const App: React.FC = () => {
             <Features />
           </section>
 
-          <section id="team" className="py-24">
-            <div className="text-center mb-16">
-              <h2 className="text-4xl md:text-5xl font-bold mb-4">The Minds Behind HashPay</h2>
-              <div className="h-1 w-24 bg-cyan-400 mx-auto" />
-            </div>
-            <TeamShowcase />
+          <section id="team">
+            <Team />
           </section>
 
           <section id="tech">
