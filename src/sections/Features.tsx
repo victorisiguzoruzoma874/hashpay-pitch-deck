@@ -3,10 +3,10 @@ import { motion } from 'framer-motion';
 
 const Features: React.FC<any> = () => {
   const features = [
-    { title: "Voice Liquidity", desc: "Interact with the blockchain using Gemini-powered natural language. 'Send $50 for coffee'—done." },
-    { title: "Smart Vaults", desc: "Institutional-grade multi-sig security optimized for regular users. Native SUI object security." },
-    { title: "Offline Orbit", desc: "Digital cash that works when the internet doesn't. Bluetooth-le powered local settlement." },
-    { title: "Universal Mesh", desc: "Bridging SUI liquidity to any merchant POS system in 2ms via parallelized abstraction." }
+    { title: "Hybrid Ecosystem", desc: "A unified application bridging traditional Web2 bank transfers with Web3 crypto assets." },
+    { title: "150+ Corridors", desc: "Instant cross-border settlement across African and global markets with zero manual friction." },
+    { title: "Banking Tools", desc: "Multi-currency accounts, virtual cards, and treasury tools for borderless businesses." },
+    { title: "Web3 Gateway", desc: "Multi-chain crypto payment gateway with on-chain settlement and full auditability." }
   ];
 
   return (

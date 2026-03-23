@@ -4,8 +4,8 @@ import { motion } from 'framer-motion';
 const Market: React.FC<any> = () => {
   const stats = [
     { label: 'Global Remittances', value: '$800B+', sub: 'Total Addressable Market' },
-    { label: 'DeFi Adoption', value: '45%', sub: 'CAGR (2024-2030)' },
-    { label: 'SUI User Growth', value: '1.2M+', sub: 'Monthly Active Wallets' }
+    { label: 'Global Corridors', value: '150+', sub: 'Active Payment Corridors' },
+    { label: 'Settlement Time', value: '<2s', sub: 'Instant Hybrid Settlement' }
   ];
 
   return (

@@ -26,6 +26,7 @@ const App: React.FC = () => {
         <div className="flex items-center gap-2">
           <div className="w-8 h-8 bg-[#0052FF] rounded-lg flex items-center justify-center font-bold text-white tracking-tighter shadow-lg shadow-[#0052FF]/20">H</div>
           <span className="text-xl font-bold tracking-tight text-[#0a0a0a]">Hash<span className="text-[#0052FF]">Pay</span></span>
+          <span className="ml-3 px-3 py-1 bg-[#0052FF]/5 border border-[#0052FF]/10 rounded-full text-[10px] font-black uppercase text-[#0052FF] tracking-[0.2em] animate-pulse">Hybrid Fintech</span>
         </div>
         
         <div className="hidden md:flex items-center gap-8 text-sm font-semibold text-[#0a0a0a]/70">
@@ -56,12 +57,12 @@ const App: React.FC = () => {
             <div className="absolute top-0 right-0 p-8 opacity-[0.03] font-black text-9xl text-[#0052FF] pointer-events-none select-none">SYNOPSIS</div>
             <div className="max-w-3xl relative z-10">
               <span className="text-[#0052FF] uppercase tracking-[0.3em] text-xs font-bold mb-6 block">Executive Briefing</span>
-              <h2 className="text-5xl font-bold mb-8 text-[#0a0a0a] tracking-tight leading-tight">Redefining the Velocity of Global Value.</h2>
+              <h2 className="text-5xl font-bold mb-8 text-[#0a0a0a] tracking-tight leading-tight">World's First Hybrid Payment Fintech.</h2>
               <p className="text-xl text-[#555555] leading-relaxed mb-8">
-                HashPay is not just a wallet; it's a <strong>universal financial abstraction layer</strong>. By combining SUI's parallel execution with Gemini's semantic intelligence, we solve the two biggest hurdles in DeFi: <strong>technical friction</strong> and <strong>latency</strong>.
+                HashPay is the unified architecture bridging traditional <strong>Web2 local transfers</strong> with <strong>Web3 cryptocurrency transactions</strong>. We eliminate the divide between fiat and digital assets within a single, frictionless ecosystem.
               </p>
               <p className="text-xl text-[#555555] leading-relaxed">
-                Our vision is a world where sending money is as natural as conversation. From instant cross-border settlements to smart escrow services that eliminate legal overhead, HashPay provides the infrastructure for the next billion users to interact with the decentralized economy seamlessly.
+                By combining institutional-grade real-time conversion with SUI's parallel execution, we enable instant cross-border settlement across 150+ corridors. Sending Naira and receiving Ghanaian Cedis is now as seamless as a local transfer, powered by decentralized trust.
               </p>
               
               <div className="mt-10 flex flex-wrap gap-4">

@@ -13,16 +13,16 @@ const Vision: React.FC<any> = () => {
         
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           <div className="text-center p-8 rounded-3xl bg-white border border-[#0052FF]/10 shadow-sm">
-            <div className="text-4xl font-black text-[#0052FF] mb-2">2026</div>
-            <div className="text-xs uppercase font-bold tracking-widest text-[#555555]">Mainnet Expansion</div>
+            <div className="text-4xl font-black text-[#0052FF] mb-2">150+</div>
+            <div className="text-xs uppercase font-bold tracking-widest text-[#555555]">Global Corridors</div>
           </div>
           <div className="text-center p-8 rounded-3xl bg-white border border-[#0052FF]/10 shadow-sm">
             <div className="text-4xl font-black text-[#0052FF] mb-2">1M+</div>
-            <div className="text-xs uppercase font-bold tracking-widest text-[#555555]">Active Terminals</div>
+            <div className="text-xs uppercase font-bold tracking-widest text-[#555555]">Hybrid Users</div>
           </div>
           <div className="text-center p-8 rounded-3xl bg-white border border-[#0052FF]/10 shadow-sm">
             <div className="text-4xl font-black text-[#0052FF] mb-2">$10B</div>
-            <div className="text-xs uppercase font-bold tracking-widest text-[#555555]">Mesh Liquidity</div>
+            <div className="text-xs uppercase font-bold tracking-widest text-[#555555]">Cross-Border Flow</div>
           </div>
         </div>
       </div>

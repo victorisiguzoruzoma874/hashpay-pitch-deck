@@ -35,10 +35,10 @@ const Solution: React.FC<any> = () => {
       <div className="max-w-6xl mx-auto flex flex-col lg:flex-row items-center gap-16">
         <div className="flex-1 text-left">
           <span className="text-[#0052FF] font-bold text-sm tracking-widest uppercase mb-4 block">The Infrastructure</span>
-          <h2 className="text-5xl md:text-7xl font-bold mb-8 text-[#0a0a0a] tracking-tight leading-[0.9]">Programmable <br/>Abstraction Layer.</h2>
+          <h2 className="text-5xl md:text-7xl font-bold mb-8 text-[#0a0a0a] tracking-tight leading-[0.9]">Hybrid Liquidity <br/>Architecture.</h2>
           <p className="text-xl text-[#555555] mb-10 leading-relaxed font-medium">
-            HashPay is the missing link between high-performance chain state and real-world utility. 
-            We provide a frictionless SDK for voice-activated, parallelized commerce.
+            HashPay is the intelligent bridge between traditional fiat banking and the decentralized economy. 
+            Our real-time conversion engine handles cross-border exchange at institutional rates, automatically.
           </p>
           
           <div className="space-y-6">
@@ -47,8 +47,8 @@ const Solution: React.FC<any> = () => {
                 <div className="w-2 h-2 bg-[#0052FF] rounded-full animate-ping" />
               </div>
               <div>
-                <h4 className="font-bold text-[#0a0a0a]">Parallelized Settlement</h4>
-                <p className="text-sm text-[#555555]">Utilizing SUI's parallel execution for zero-latency commerce.</p>
+                <h4 className="font-bold text-[#0a0a0a]">Intelligent Real-time Conversion</h4>
+                <p className="text-sm text-[#555555]">Automated Naira to Cedi (and 150+ corridors) at institutional-grade rates.</p>
               </div>
             </div>
           </div>

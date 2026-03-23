@@ -3,9 +3,9 @@ import { motion } from 'framer-motion';
 
 const Problem: React.FC<any> = () => {
   const painPoints = [
-    { title: "Fragmented UX", desc: "Web3 wallets are too complex for mass retail adoption." },
-    { title: "Liquidity Gaps", desc: "Cross-border settlements take days, not seconds." },
-    { title: "Escrow Risks", desc: "Lack of programmable trust in P2P transactions." }
+    { title: "Hybrid Friction", desc: "Traditional banking and crypto remain fundamentally incompatible for daily use." },
+    { title: "Liquidity Gaps", desc: "Cross-border friction costs $120B+ annually in delayed settlements." },
+    { title: "Access Barriers", desc: "Complexity prevents millions from accessing global financial corridors." }
   ];
 
   return (

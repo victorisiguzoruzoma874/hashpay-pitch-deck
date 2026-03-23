@@ -20,14 +20,14 @@ const Hero: React.FC<SlideProps> = ({ onNext, onPrev, isFirst, isLast }) => {
         className="text-center z-10 max-w-4xl"
       >
         <span className="inline-block px-4 py-1.5 rounded-full bg-[#0052FF]/10 text-[#0052FF] text-xs font-bold uppercase tracking-[0.2em] mb-8 border border-[#0052FF]/20">
-          The Future of Web3 Payments
+          World's First Hybrid Payment Fintech
         </span>
         <h1 className="text-6xl md:text-8xl font-bold mb-8 tracking-tighter text-[#0a0a0a]">
           Hash<span className="text-[#0052FF]">Pay</span>
         </h1>
         <p className="text-xl md:text-2xl text-[#555555] mb-12 max-w-2xl mx-auto leading-relaxed">
-          The AI-powered financial layer for the SUI ecosystem. 
-          Bridging abstraction with instant, programmable liquidity.
+          The unified ecosystem bridging traditional banking with Web3. 
+          Instant global settlement for the next billion users.
         </p>
         
         <div className="flex flex-col md:flex-row gap-6 justify-center items-center">
