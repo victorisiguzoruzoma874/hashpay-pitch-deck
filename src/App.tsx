@@ -1,4 +1,5 @@
 import React from 'react';
+import AppLogo from './components/AppLogo';
 import Hero from './sections/Hero';
 import Problem from './sections/Problem';
 import Solution from './sections/Solution';
@@ -28,8 +29,9 @@ const App: React.FC = () => {
       <nav className="fixed top-0 left-0 right-0 z-50 h-[var(--navbar-h)] flex backdrop-blur-md bg-white/70 border-b border-[#0052FF]/10">
         <div className="flex items-center justify-between px-6 max-w-7xl mx-auto w-full gap-6">
           <div className="flex items-center gap-2">
-            <div className="w-8 h-8 bg-[#0052FF] rounded-lg flex items-center justify-center font-bold text-white tracking-tighter shadow-lg shadow-[#0052FF]/20">H</div>
-            <span className="text-xl font-bold tracking-tight text-[#0a0a0a]">Hash<span className="text-[#0052FF]">Pay</span></span>
+            {/* <div className="w-8 h-8 bg-[#0052FF] rounded-lg flex items-center justify-center font-bold text-white tracking-tighter shadow-lg shadow-[#0052FF]/20">H</div>
+            <span className="text-xl font-bold tracking-tight text-[#0a0a0a]">Hash<span className="text-[#0052FF]">Pay</span></span> */}
+            <AppLogo />
             <span className="ml-3 hidden sm:block px-3 py-1 bg-[#0052FF]/5 border border-[#0052FF]/10 rounded-full text-[10px] font-black uppercase text-[#0052FF] tracking-[0.2em] animate-pulse">Hybrid Fintech</span>
           </div>
 
@@ -75,8 +77,9 @@ const App: React.FC = () => {
               {/* Sidebar header */}
               <div className="flex items-center justify-between px-6 h-[var(--navbar-h)] border-b border-[#0052FF]/10 shrink-0">
                 <div className="flex items-center gap-2">
-                  <div className="w-8 h-8 bg-[#0052FF] rounded-lg flex items-center justify-center font-bold text-white shadow-lg shadow-[#0052FF]/20">H</div>
-                  <span className="text-xl font-bold tracking-tight text-[#0a0a0a]">Hash<span className="text-[#0052FF]">Pay</span></span>
+                  {/* <div className="w-8 h-8 bg-[#0052FF] rounded-lg flex items-center justify-center font-bold text-white shadow-lg shadow-[#0052FF]/20">H</div>
+                  <span className="text-xl font-bold tracking-tight text-[#0a0a0a]">Hash<span className="text-[#0052FF]">Pay</span></span> */}
+                   <AppLogo />
                 </div>
                 <button
                   onClick={() => setIsSidebarOpen(false)}
