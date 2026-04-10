@@ -3,6 +3,7 @@
 @tailwind utilities;
 
 :root {
+  --navbar-h: 4.5rem;
   --primary: #0052FF;
   --primary-glow: rgba(0, 82, 255, 0.2);
   --secondary: #0037FF;
@@ -18,6 +19,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  scroll-behavior: smooth;
 }
 
 body {

@@ -113,9 +113,9 @@ const Solution: React.FC<any> = () => {
             <div className="absolute inset-0 border-[16px] border-white/5 rounded-[4rem] pointer-events-none z-40" />
           </div>
 
-          <div className="absolute -top-6 -right-6 bg-white border-2 border-[#0052FF] text-[#0052FF] px-6 py-3 font-mono text-xs font-black shadow-2xl z-50 transform rotate-6">
+          {/* <div className="absolute -top-6 -right-6 bg-white border-2 border-[#0052FF] text-[#0052FF] px-6 py-3 font-mono text-xs font-black shadow-2xl z-50 transform rotate-6">
             CORE_RELIABLE_v6.4
-          </div>
+          </div> */}
         </div>
       </div>
     </section>

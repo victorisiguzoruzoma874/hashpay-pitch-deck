@@ -10,7 +10,7 @@ const TEAM_MEMBERS = [
   {
     name: "Peter Martins N",
     role: "Chief Technical Lead",
-    image: "/assets/team/tech_lead.png"
+    image: "/assets/team/martinsdre.png"
   },
   {
     name: "Victor Isiguzor Uzoma",
@@ -22,11 +22,11 @@ const TEAM_MEMBERS = [
     role: "Chief Marketing and Security Officer",
     image: "/assets/team/marketing_security.png"
   },
-  {
-    name: "Sheriff Mudasir",
-    role: "Chief Audit and Security Manager",
-    image: "/assets/team/audit_security.png"
-  },
+  // {
+  //   name: "Sheriff Mudasir",
+  //   role: "Chief Audit and Security Manager",
+  //   image: "/assets/team/audit_security.png"
+  // },
   {
     name: "Yusuf Hussaini",
     role: "Chief Technical Support Officer",
@@ -45,7 +45,8 @@ const Team: React.FC = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
+        {/* <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12"> */}
+        <div className="grid gap-12 justify-center items-center [grid-template-columns:repeat(auto-fit,minmax(280px,300px))]">
           {TEAM_MEMBERS.map((member, idx) => (
             <motion.div 
               key={idx}

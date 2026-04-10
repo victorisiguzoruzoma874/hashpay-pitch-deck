@@ -13,7 +13,7 @@ const CTA: React.FC<any> = ({ onPrev }) => {
         <div className="flex flex-col md:flex-row gap-8 items-start">
           <motion.button 
             whileHover={{ x: 10 }}
-            className="group flex items-center gap-6 px-12 py-6 bg-[#0052FF] text-white rounded-full font-bold text-2xl shadow-2xl shadow-[#0052FF]/30"
+            className="cursor-pointer group flex items-center gap-6 px-12 py-6 bg-[#0052FF] text-white rounded-full font-bold text-2xl shadow-2xl shadow-[#0052FF]/30"
           >
             Become a Partner
             <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" className="group-hover:translate-x-2 transition-transform">

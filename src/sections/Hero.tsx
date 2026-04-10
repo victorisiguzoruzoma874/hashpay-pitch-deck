@@ -13,7 +13,7 @@ const Hero: React.FC<SlideProps> = ({ onNext, onPrev, isFirst, isLast }) => {
     document.getElementById('summary')?.scrollIntoView({ behavior: 'smooth' });
   };
   return (
-    <section id="hero" className="min-h-screen flex flex-col items-center justify-center px-6 relative overflow-hidden">
+    <section id="hero" className="h-screen max-h-[800px] lg:max-h-[900px] xl:max-h-[1000px] h-full flex flex-col items-center justify-center px-6 relative overflow-hidden">
       <motion.div 
         initial={{ opacity: 0, y: 30 }}
         animate={{ opacity: 1, y: 0 }}
@@ -35,13 +35,18 @@ const Hero: React.FC<SlideProps> = ({ onNext, onPrev, isFirst, isLast }) => {
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
             onClick={onNext}
-            className="px-10 py-4 bg-[#0052FF] text-white rounded-full font-bold text-lg shadow-xl shadow-[#0052FF]/30 transition-shadow hover:shadow-[#0052FF]/50"
+            className="cursor-pointer px-10 py-4 bg-[#0052FF] text-white rounded-full font-bold text-lg shadow-xl shadow-[#0052FF]/30 transition-shadow hover:shadow-[#0052FF]/50"
           >
             Explore Vision
           </motion.button>
-          <button className="text-[#0a0a0a] font-bold text-lg border-b-2 border-transparent hover:border-[#0052FF] transition-all py-2">
+          <a
+            href="/HashPay_Whitepaper.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="cursor-pointer text-[#0a0a0a] font-bold text-lg border-b-2 border-transparent hover:border-[#0052FF] transition-all py-2"
+          >
             Read Whitepaper
-          </button>
+          </a>
         </div>
       </motion.div>
 
